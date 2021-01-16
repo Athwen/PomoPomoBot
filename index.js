@@ -6,4 +6,4 @@ client.once('ready', () =>{
 
 });
 
-client.login('ODAwMDIyNjA1OTAxMjAxNDM4.YAMFHA.Ys7vwIJtJy9sSlsNOaHCduq7NKE');
+client.login(process.env.BOT_TOKEN);
