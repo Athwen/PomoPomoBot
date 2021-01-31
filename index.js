@@ -16,7 +16,7 @@ client.on('message', message => {
     if(command === 'ping'){
         message.reply('pong');
 
-    }else if(command = 'args-info'){
+    }else if(command === 'args-info'){
         if(!args.length){
             return message.channel.send(`You didn't provide any arguments, ${message.author}`);
 
