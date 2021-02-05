@@ -1,6 +1,5 @@
 const { VoiceConnection, MessageManager } = require('discord.js');
-const fs = require('fs');
-const ytdl  = require('ytdl-core');
+    const ytdl  = require('ytdl-core');
 
 module.exports = {
     name: 'play',
