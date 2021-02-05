@@ -6,7 +6,7 @@ module.exports = {
     description: 'play music from youtube link',
     args: true,
     usage: '<Youtube URL>',
-    execute(message, args){
+    async execute(message, args){
         if(message.member.author.voice.channel){
             const connection = await message.member.author.channel.join();
 
