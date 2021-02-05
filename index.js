@@ -6,7 +6,7 @@ const myIntents = new Intents();
 myIntents.add('GUILD_PRESENCES', 'GUILD_MEMBERS');
 
 const client = new Client({ ws: { intents: myIntents } });
-client.commands = Collection();
+client.commands = new Collection();
 
 const commandFile = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
