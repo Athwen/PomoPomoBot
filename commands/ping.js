@@ -5,10 +5,15 @@ module.exports = {
     args: true,
     usage: '<user>',
     execute(message, args){
-        message.guild.members.fetch().then(fetchedMembers => {
-            const totalOnline = fetchedMembers.filter(member => member.presence.status === 'online');
-            // We now have a collection with all online member objects in the totalOnline variable
-            console.log(`There are currently ${totalOnline.size} members online in this guild!`)
+        message.guild.members.fetch().then(fetchedMembers =>{
+            const onlineUsers = fetchedMembers.filter(member => member.presence.status !== 'offline');
+
+            console.log(onlineUsers);
+
+            const user = onlineUsers.find(user => user.username === `${args[0]}`);
+            console.log(user);
+            message.channel.send(`ping ${user}`);
+
         });
 
         
