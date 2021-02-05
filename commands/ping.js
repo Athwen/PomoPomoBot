@@ -10,7 +10,7 @@ module.exports = {
 
             console.log(onlineUsers);
 
-            const user = fetchedMembers.find(user => user.username === `${args[0]}`);
+            const user = onlineUsers.find(user => user.username === `${args[0]}`);
             console.log(user);
             message.channel.send(`ping ${user}`);
 
