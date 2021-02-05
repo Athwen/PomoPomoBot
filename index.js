@@ -7,7 +7,7 @@ client.commands = new Discord.Collection();
 
 const commandFile = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-let guilds = client.guilds.array();
+let guilds = client.guilds.cache.array();
 
 guilds.forEach(guild => {
     guild.members.fetch();
