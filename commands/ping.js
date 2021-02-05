@@ -6,7 +6,7 @@ module.exports = {
     usage: '<user>',
     execute(message, args){
         message.guild.members.fetch().then(fetchedMembers =>{
-            const onlineUsers = fetchedMembers.filter(memmber => member.status.status !== 'offline');
+            const onlineUsers = fetchedMembers.filter(member => member.status.status !== 'offline');
 
             console.log(onlineUsers);
 
