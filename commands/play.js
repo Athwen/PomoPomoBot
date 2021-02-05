@@ -8,9 +8,11 @@ module.exports = {
     usage: '<Youtube URL>',
     async execute(message, args){
         if(message.member.voice.channel){
-            const connection = await message.member.voice.channel.join();
+            message.member.voice.channel.join();
 
-            connection.play(ytdl(args[0], { filter: 'audioonly'}), {
+            const broadcast = message.client.voice.createBroadcast();
+
+            broadcast.play(ytdl(args[0], { filter: 'audioonly'}), {
                 type: 'webm/opus'
 
             });
