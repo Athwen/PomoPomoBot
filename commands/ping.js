@@ -5,7 +5,7 @@ module.exports = {
     args: true,
     usage: '<user>',
     execute(message, args){
-        message.guild.members.fetch();
+        message.guild.members.fetch().then(console.log).catch(console.error);
         console.log(message.client.users.cache);
         const user = message.client.users.cache.find(user => user.username === `${args[0]}`);
         console.log(user);
