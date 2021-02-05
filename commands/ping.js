@@ -6,7 +6,7 @@ module.exports = {
     usage: '<user>',
     execute(message, args){
         message.guild.members.fetch();
-        console.log(message.client.users);
+        console.log(message.client.users.cache);
         const users = message.client.users.cache.find(user => user.name === `${args[0]}`);
         console.log(users);
         message.channel.send(`ping @${args[0]}`);
