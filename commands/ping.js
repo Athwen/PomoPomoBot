@@ -5,18 +5,11 @@ module.exports = {
     args: true,
     usage: '<user>',
     execute(message, args){
-        message.guild.members.fetch().then(fetchedMembers =>{
-            const onlineUsers = fetchedMembers.filter(member => member.presence.status !== 'offline');
-
-            console.log(onlineUsers);
-
-            const user = onlineUsers.find(target => target.user.username === `${args[0]}`);
-            console.log(user);
-            message.channel.send(`ping ${user}`);
-
-        }).catch(console.error);
-
-        
+        message.guild.members.fetch().then()
+        console.log(message.client.users.cache);
+        const user = message.client.users.cache.find(user => user.username === `${args[0]}`);
+        console.log(user);
+        message.channel.send(`ping ${user}`);
 
     },
 };
