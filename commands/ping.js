@@ -7,9 +7,9 @@ module.exports = {
     execute(message, args){
         message.guild.members.fetch();
         console.log(message.client.users.cache);
-        const users = message.client.users.cache.find(user => user.name === `${args[0]}`);
-        console.log(users);
-        message.channel.send(`ping @${args[0]}`);
+        const user = message.client.users.cache.find(user => user.username === `${args[0]}`);
+        console.log(user);
+        message.channel.send(`ping ${user}`);
 
     },
 };
