@@ -7,7 +7,7 @@ module.exports = {
     args: true,
     usage: '<Youtube URL>',
     async execute(message, args){
-        if(message.member.author.voice.channel){
+        if(message.member.voice.channel){
             const connection = await message.member.author.channel.join();
 
             connection.play(ytdl(args[0], { filter: 'audioonly'}), {
